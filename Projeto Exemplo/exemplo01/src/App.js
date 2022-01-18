@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form> {/* Formulário */}
+        <input type="text" placeholder="Nome" />  {/* Nome do campo */}
+        <textarea placeholder="Fale sobre vc..." /> {/* Descrição do campo */}
+      </form>
+      <ul> {/* Lista de itens */}
+        <li> {/* Item da lista */}
+          <section> 
+            <header> 
+              <h2> Titulo </h2> {/* Titulo do item */ }
+            </header>
+            <p> Fale sobre vc </p> {/* Descrição do item */}
+            <img src="https://www.luiztools.com.br/wp-content/uploads/2020/06/reactJS.png" alt="Imagem" /> {/* Imagem do item */}
+          </section>
+        </li>
+      </ul>
     </div>
   );
 }
