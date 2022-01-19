@@ -1,0 +1,37 @@
+.container {
+margin: 10px auto;
+width: 400px;
+}
+
+.formulario {
+padding: 20px;
+}
+
+.fildeset{
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.input{
+  height: 30px;
+  width: 30px;
+}
+
+.button-container {
+  display: flex;
+  flex: 1;
+}
+
+.button-container button{
+  width: 100px;
+  height: 14px;
+  height: 30px;
+  background-color: seashell;
+
+}
+
+.label {
+  width: 200px;
+  color: #444;
+}
+
