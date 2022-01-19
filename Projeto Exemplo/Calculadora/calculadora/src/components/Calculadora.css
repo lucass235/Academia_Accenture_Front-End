@@ -1,0 +1,36 @@
+.container {
+    background-color: rgb(123, 191, 236);
+    border: 1em;
+    border-radius: 1em;
+}
+
+.operacoes{
+    background-color: rgb(123, 191, 236);
+    border: 1em;
+    border-radius: 1em;
+    position: absolute;
+    left: 300px;
+    top: 350px;
+}
+
+.resultado {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1em;
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+button {
+    width: 3em;
+    height: 3em;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 3em;
+    margin: auto;
+  }
+  
+  button:hover {
+    background-color: #a6dbe2;
+    cursor: pointer;
+  }
