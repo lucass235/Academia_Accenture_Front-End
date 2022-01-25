@@ -1,22 +1,59 @@
-import "./App.css";
-import * as S from "./components/styles";
 import { useState } from "react";
-import { TiSocialInstagram } from "react-icons/ti";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./styles/global";
+import Card from "./components/Card";
 
 function App() {
-  const [corBotao, setCorBotao] = useState(true);
+  /*
+      ✅ LISTA DE ASSUNTOS:
+      ======================
+      -> O que é o styled-components? ✅
+      -> Como criar um styled-component ✅
+      -> Uso de props em componentes styled ✅
+      -> Criando componentes à partir de outros ✅
+      -> Estilizando componentes de outras bibliotecas ✅
+      -> Seletores ✅
+      -> Ícones com react-icons ✅
+      -> Fontes com google-fonts ✅
+      -> <GlobalStyle/> e createGlobalStyle ✅
+      -> Utilizando temas com <ThemeProvider/> ✅
+      -> Mixins com {css} do styled-components ✅
+  */
+
+  const message = "Olá Teste";
+
+  const themeLight = {
+    primary: "white",
+    secondary: "black",
+    highlight: "pink",
+    width: "4000px",
+  };
+
+  const themeDark = {
+    primary: "black",
+    secondary: "white",
+    highlight: "pink",
+    width: "4000px",
+  };
+
+  const [theme, setTheme] = useState(themeLight);
+
+  const changeTheme = () => {
+    // Se o tema atual for o themeLight
+    if (theme.primary === "white") {
+      setTheme(themeDark);
+    } else {
+      setTheme(themeLight);
+    }
+  };
+
   return (
-    <div className={"box"}>
-      <S.Box>
-        <S.Title>Título</S.Title>
-        <S.SubTitle>Subtítulo</S.SubTitle>
-        <S.Button color={"yellow"}>OK</S.Button>
-        <S.Button color={"magenta"}>Cancelar </S.Button>
-        <S.ButtonAlt color={"grey"}>Botão Alternativo</S.ButtonAlt>
-        <TiSocialInstagram size={80}> </TiSocialInstagram>
-        <S.IconLens> </S.IconLens>
-      </S.Box>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Card onChangeTheme={changeTheme} message={message} />
+      </ThemeProvider>
+    </>
   );
 }
 
