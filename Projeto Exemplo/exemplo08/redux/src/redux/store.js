@@ -1,26 +1,17 @@
-import { combineReducers } from "redux";
 import { createStore } from "redux";
-
-// Persist
-import { persistStore, persistReducer } from "redux-persist";
+import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import CounterReducer from "./reducers/counter.reducer";
-import CartReducer from "./reducers/cart.reducer";
+import DefaultReducers from './reducers';
 
 const persistConfig = {
-  key: "root",
-  storage,
-};
+    key: "root",
+    storage
+}
 
-const Reducers = combineReducers({
-  counter: CounterReducer,
-  cart: CartReducer,
-});
+const persistedReducers = persistReducer(persistConfig, DefaultReducers);
 
-const persistedReducer = persistReducer(persistConfig, Reducers);
-
-const store = createStore(persistedReducer);
+const store = createStore(persistedReducers);
 const persistor = persistStore(store);
 
-export { store, persistor };
+export {store, persistor};
